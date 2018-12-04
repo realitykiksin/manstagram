@@ -1,0 +1,37 @@
+
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="app.css">
+
+
+   
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Man-stagram!</h1>
+            <p>Manstagram is the largest collection of the manliest posts on the internet. Enjoy feeds without any sign of wedding dresses and wierd TikTok memes! This is the place you can unleash your manliness!</p>
+            <p>Click below to post something new!</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/new">Add a post here</a>
+            </p>
+        </div>
+    </header>
+    
+    <div id="image-container">
+    
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% posts.forEach(function(post){ %>
+            <div class="col-md-6 col-sm-12">
+                <a href="/show/<%= post._id %>">
+                    <div class="thumbnail">
+                        <img src="<%= post.image %>">
+                    </div>
+                </a>    
+            </div>
+        <% });%>
+    </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
